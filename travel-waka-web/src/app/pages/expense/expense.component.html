@@ -1,0 +1,34 @@
+<!-- <p class="mat-title">Expenses</p> -->
+<ng-container *ngIf="expenses | async as expense$">
+  <ng-container *ngIf="expense$ && expense$.length > 0; else noExpense">
+    <mat-list>
+      <h3 mat-subheader>Expenses</h3>
+      <mat-list-item *ngFor="let expense of expense$">
+        <mat-icon mat-list-icon class="listicon">{{
+          expense.budget.category.icon
+        }}</mat-icon>
+        <h4 mat-line>{{ expense.gist }}</h4>
+        <span mat-line>
+          <ul class="actions">
+            <li>{{ expense.creationDate | date }}</li>
+            <li><a class="clickable" (click)="callEdit(expense)">Edit</a></li>
+            <li><a class="clickable" (click)="delete(expense)">Delete</a></li>
+          </ul>
+        </span>
+        <span>{{ expense.amount | currency: appCurrency }}</span>
+      </mat-list-item>
+    </mat-list>
+    <div class="btn-area">
+      <button mat-button (click)="callEdit()" color="primary">
+        <mat-icon>add</mat-icon> Add Expense
+      </button>
+    </div>
+  </ng-container>
+  <ng-template #noExpense>
+    <app-empty-state
+      ><button mat-button (click)="callEdit()" color="primary">
+        <mat-icon>add</mat-icon> Add Expense
+      </button>
+    </app-empty-state>
+  </ng-template>
+</ng-container>

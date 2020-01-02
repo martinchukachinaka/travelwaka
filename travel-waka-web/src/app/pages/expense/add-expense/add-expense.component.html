@@ -1,0 +1,40 @@
+<form *ngIf="form" [formGroup]="form" (submit)="submit()">
+  <p class="mat-title">Save Expense</p>
+  <div mat-dialog-content>
+    <mat-form-field>
+      <mat-label>Budget</mat-label>
+      <mat-select formControlName="budget" [compareWith]="compareFn">
+        <mat-option *ngFor="let budget of budgets | async" [value]="budget"
+          >{{ budget.code }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="amount"
+        placeholder="Enter Amount"
+        type="number"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        formControlName="creationDate"
+        placeholder="Enter Creation Date"
+        type="date"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput formControlName="blame" placeholder="Who's to blame" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>How did this happen</mat-label>
+      <textarea matInput rows="3" formControlName="gist"></textarea>
+    </mat-form-field>
+  </div>
+  <div class="dialog-footer">
+    <button mat-button (click)="dialogRef.close()">Cancel</button>
+    <button mat-button color="primary" [disabled]="form.invalid">Save</button>
+  </div>
+</form>

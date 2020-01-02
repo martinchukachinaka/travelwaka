@@ -1,0 +1,31 @@
+@import '../../../app-variables';
+:host {
+  mat-list-item {
+    mat-icon.listicon {
+      font-size: 2rem;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    li {
+      margin-left: 1rem;
+      padding-right: 0.5rem;
+      font-size: 0.875rem;
+      &:first-child {
+        list-style: none;
+        margin: 0;
+      }
+      .clickable {
+        &:hover {
+          color: $primary;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import '../../../../app-variables';
+:host {
+  display: block;
+  margin-bottom: 2rem;
+  header {
+    text-align: center;
+    h1 {
+      margin-bottom: 1rem;
+      color: $primary;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 0;
+      ul {
+        font-size: 0.875rem;
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
+        width: 60%;
+        flex-wrap: wrap;
+        padding: 0;
+        a {
+          color: inherit;
+          text-transform: uppercase;
+          &:hover,
+          &.active {
+            text-decoration: underline;
+            color: $primary;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}

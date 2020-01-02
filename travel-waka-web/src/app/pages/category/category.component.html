@@ -1,0 +1,32 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th [style.width]="'1%'">S/N</th>
+      <th>Code</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of categories | async; let idx = index">
+      <td class="text-center">{{ idx + 1 }}.</td>
+      <td>{{ cat.code }}</td>
+      <td>{{ cat.name }}</td>
+      <td>{{ cat.description || 'N/A' }}</td>
+      <td>
+        <button mat-icon-button (click)="callEdit(cat)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(cat)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <button mat-button color="primary" (click)="callEdit()">
+    <mat-icon>add</mat-icon> Add Category
+  </button>
+</div>

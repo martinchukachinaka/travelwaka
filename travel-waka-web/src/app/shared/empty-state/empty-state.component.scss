@@ -1,0 +1,26 @@
+@import '../../../app-variables';
+
+$iconSize: 10rem;
+:host {
+  mat-card {
+    background-color: #f9f9f9;
+  }
+  display: block;
+  min-height: 20rem;
+  text-align: center;
+
+  .flat {
+    box-shadow: none;
+    border-color: transparent;
+  }
+
+  mat-icon {
+    font-size: $iconSize;
+    width: $iconSize;
+    height: $iconSize;
+    color: #ddd;
+  }
+  .msg {
+    color: #bbb;
+  }
+}

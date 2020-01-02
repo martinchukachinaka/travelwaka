@@ -1,0 +1,16 @@
+$iconSize: 10rem;
+:host {
+  display: block;
+  min-height: 15rem;
+  text-align: center;
+  mat-icon {
+    font-size: $iconSize;
+    width: $iconSize;
+    height: $iconSize;
+    color: #ededed;
+  }
+  .msg {
+    color: #ccc;
+    font-size: 1.5rem;
+  }
+}

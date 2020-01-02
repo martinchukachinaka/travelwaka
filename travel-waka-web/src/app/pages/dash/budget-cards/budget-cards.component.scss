@@ -1,0 +1,13 @@
+@import '../../../../app-variables';
+
+:host {
+  mat-card {
+    background-color: $offbody;
+  }
+
+  .flexed {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}

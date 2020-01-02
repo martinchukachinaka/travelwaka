@@ -1,0 +1,42 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+.img-background {
+  background: url(/assets/images/404-icon.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+
+  @include media-breakpoint-down(xs) {
+    background-size: cover;
+  }
+}
+
+/* Below piece of code makes the highlitened box*/
+div.err {
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.err h1 {
+  color: #14b49d;
+}
+
+div.err p {
+  margin: 2%;
+  font-weight: bold;
+  color: #000000;
+  padding: 90px;
+}
+
+@media (min-width: 768px) {
+  .mat-display-4 {
+    font-size: 13rem;
+    font-weight: 400;
+  }
+}

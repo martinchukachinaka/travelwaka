@@ -1,0 +1,25 @@
+@import 'app-variables';
+@import 'app-theme';
+@import 'custom-bootstrap';
+@import 'app-utils';
+
+/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+
+.mat-typography {
+  .mat-form-field {
+    width: 100%;
+  }
+}
+
+.btn-area {
+  border-top: 1px solid #ccc;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}

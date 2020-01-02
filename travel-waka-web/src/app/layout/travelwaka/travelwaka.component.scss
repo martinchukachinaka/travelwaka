@@ -1,0 +1,26 @@
+@import '../../../app-variables';
+
+:host {
+  display: flex;
+  width: 100%;
+  main {
+    margin: 0;
+    background-color: white;
+    width: 100%;
+    padding: 3rem 10rem;
+    min-height: 100vh;
+  }
+  width: 100%;
+  @media (min-width: $doubleExtraLargeScreensMinWidth) {
+    padding-top: 3rem;
+    width: 65%;
+    margin: 0 auto;
+    main {
+      padding: 5rem;
+      min-height: 90vh;
+      border-radius: 0.25rem;
+      box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.06),
+        0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th [style.width]="'1%'">S/N</th>
+      <th>Code</th>
+      <th class="money">Amount ({{ appCurrency }})</th>
+      <th>Created</th>
+      <th>Last Modified</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let budget of budgetList | async; let idx = index">
+      <td class="text-center">{{ idx + 1 }}.</td>
+      <td>{{ budget.code }}</td>
+      <td class="money">{{ budget.amount | number: '1.2-2' }}</td>
+      <td>{{ budget.creationDate | date }}</td>
+      <td>{{ budget.lastModified | date }}</td>
+      <td>
+        <button mat-icon-button (click)="callEdit(budget)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="delete(budget)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<div>
+  <button mat-button color="primary" (click)="callEdit()">
+    <mat-icon>add</mat-icon> Add Budget
+  </button>
+</div>

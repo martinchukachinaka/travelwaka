@@ -1,0 +1,22 @@
+<ng-container *ngIf="total | async as $total">
+  <div class="row">
+    <div class="col-12">
+      <mat-card class="mat-elevation-z0">
+        <mat-card-subtitle>Expenses Breakdown</mat-card-subtitle>
+        <mat-card-content>
+          <h1 class="mat-display-1 mb-3">
+            {{ $total.expense | currency: appCurrency }}
+          </h1>
+          <div class="flexed">
+            <small class="mat-subheading-2 mb-0"
+              >({{ $total.budget | currency: appCurrency }})</small
+            >
+            <small class="mat-subheading-2 mb-0">
+              {{($total.budget - $total.expense) | currency: appCurrency}}
+            </small>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</ng-container>
